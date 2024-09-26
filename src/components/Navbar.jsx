@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/Logo.jpg';
+import CartWidget from './CartWidget';
 
 const Navbar = () => {
   return (
@@ -14,8 +15,9 @@ const Navbar = () => {
         <li><Link to="/produtos" className="nav-link">Produtos</Link></li>
         <li><Link to="/carrinho" className="nav-link">Carrinho</Link></li>
       </ul>
+      <CartWidget />
     </nav>
   );
 };
 
-export default Navbar;
+export default Navbar;''

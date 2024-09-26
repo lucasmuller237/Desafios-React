@@ -6,6 +6,7 @@ import Produtos from './pages/Produtos';
 import Carrinho from './pages/Carrinho';
 import './App.css';
 
+
 function App() {
   return (
     <div classname="content">    
@@ -16,6 +17,7 @@ function App() {
             <Route path="/produtos" element={<Produtos />} />
             <Route path="/carrinho" element={<Carrinho />} />
           </Routes>
+          
       </Router>
   </div>
    
