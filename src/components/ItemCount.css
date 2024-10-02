@@ -1,0 +1,53 @@
+.item-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .btn-decrease, .btn-increase {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 5px;
+  }
+  
+  .btn-decrease:disabled, .btn-increase:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+  }
+  
+  .count {
+    font-size: 18px;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  
+  .btn-add-to-cart {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .btn-add-to-cart:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+  }
+  
+  .out-of-stock {
+    color: red;
+    margin-top: 10px;
+  }
+  

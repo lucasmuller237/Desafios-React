@@ -1,27 +1,36 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Produtos from './pages/Produtos';
-import Carrinho from './pages/Carrinho';
-import './App.css';
-
+import React, { useState } from 'react';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+import Cart from './components/Cart';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item, quantity) => {
+    const itemInCart = cartItems.find(cartItem => cartItem.id === item.id);
+
+    if (itemInCart) {
+      setCartItems(cartItems.map(cartItem =>
+        cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity + quantity }
+          : cartItem
+      ));
+    } else {
+      setCartItems([...cartItems, { ...item, quantity }]);
+    }
+  };
+
   return (
-    <div classname="content">    
-      <Router>
-        <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/produtos" element={<Produtos />} />
-            <Route path="/carrinho" element={<Carrinho />} />
-          </Routes>
-          
-      </Router>
-  </div>
-   
+    <Router>
+      <NavBar cartItems={cartItems} />
+      <Routes>
+        <Route path="/" element={<ItemListContainer addToCart={addToCart} />} />
+        <Route path="/cart" element={<Cart cartItems={cartItems} />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
