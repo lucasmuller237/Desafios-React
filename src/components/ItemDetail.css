@@ -1,0 +1,11 @@
+.item-detail {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .item-detail-image {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  

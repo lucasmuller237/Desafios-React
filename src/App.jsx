@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import Cart from './components/Cart';
+import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <NavBar cartItems={cartItems} />
       <Routes>
         <Route path="/" element={<ItemListContainer addToCart={addToCart} />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} />} />
       </Routes>
     </Router>
